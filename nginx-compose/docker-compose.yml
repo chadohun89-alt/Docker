@@ -1,0 +1,36 @@
+services:       # 컨테이너를 정의 하겠다.
+  nginx-web:    # 지금 작성하는 compose 서비스명
+    image: nginx
+    container_name: web-server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+
+# docker compose up -d
+
+
+
+
+
+
+
+
+# # 기본형
+# student:
+#   name: kim
+#   age: 45
+
+# # 배열
+# fruits:
+#   - apple
+#   - banana
+#   - tomato
+
+# # 나 주석이야
+# students:
+#   - name: "kim ga gu"
+#     age: 20.2
+#   - name: lee
+#     age: null
+

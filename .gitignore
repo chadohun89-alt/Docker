@@ -1,0 +1,13 @@
+# MySQL 데이터 파일 (컨테이너 볼륨 데이터)
+mysql-data/
+
+# Java 빌드 결과물
+*.jar
+
+# Python 캐시
+__pycache__/
+*.pyc
+*.pyo
+
+# SSL 인증서/키
+*.pem

@@ -1,0 +1,21 @@
+# demo.jar의 웹 서버를 만들어 보세요
+#외부 접속 포트는 9000입니다.
+
+# 무엇부터 해야하지? 
+# 1. 일단 Dockerfile부터 채운다.
+# 2. nginx.conf를 채운다.
+# 3. docker-compose.yml을 채운다.
+
+services:
+  spring:
+    build: ./spring
+    container_name: spring-server
+  nginx:
+    image: nginx
+    container_name: nginx-server2
+    ports:
+      - "9080:80"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+    depends_on:
+      - spring

@@ -1,0 +1,13 @@
+services:
+  flask:
+    build: ./flask
+    container_name: flask-server
+  nginx:
+    image: nginx
+    container_name: nginx-server
+    ports:
+      - "8080:80"
+    volumes:
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - flask
