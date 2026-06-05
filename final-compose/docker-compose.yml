@@ -9,18 +9,21 @@ services:
     depends_on:
       - spring
       - fastapi
+    restart: unless-stopped
   
   spring:
     build: ./spring
     container_name: spring-server
     depends_on:
       - mysql
+    restart: unless-stopped
   
   fastapi:
     build: ./fastapi
     container_name: fastapi-server
     depends_on:
       - mysql
+    restart: unless-stopped
 
   mysql:
     image: mysql:8.0
@@ -31,4 +34,5 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
     volumes:
       - C:/server/mysql-data:/var/lib/mysql
+    restart: unless-stopped
       
